@@ -20,7 +20,7 @@ def convert_to_binary(number:int):
     elif bits <=31:
         binary= (31-bits)*"0"+binary
 
-    if sign =="1":
+    if sign =="1": # -13 -> "1" 13-1 = 12-> binary ->  1111 -> "1" + binary
         flip = ""
         for i in range(len(binary)):
             if binary[i]=="0":
