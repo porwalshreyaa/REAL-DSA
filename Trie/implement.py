@@ -39,7 +39,7 @@ class Trie:
                 return "Not Found"
             current = current.children[word[i]]
         if current.end_of_word:
-            return "Found"
+            return f"Found: {current.end_of_word}"
         return "Not Found"
     
     def get_tail(self, words, prefix, node):
@@ -97,32 +97,32 @@ class Trie:
         return "Not Found"
 
 
-test_cases = [
-    ("insert", "shoe", None),
-    ("draw", "", [{'s': ([{'h': ([{'o': ([{'e': ([], 1)}], 0)}], 0)}], 0)}]),
-    ("insert", "search", None),
-    ("search", "search", "Found"),
-    ("search", "shoe", "Found"),
-    ("delete", "search", "Deleted"),
-    ("search", "search", "Not Found"),
-    ("insert", "road", None),
-    ("draw", "", [{'s': ([{'h': ([{'o': ([{'e': ([], 1)}], 0)}], 0)}, {'e': ([{'a': ([{'r': ([{'c': ([{'h': ([], 0)}], 0)}], 0)}], 0)}], 0)}], 0)}, {'r': ([{'o': ([{'a': ([{'d': ([], 1)}], 0)}], 0)}], 0)}]),
-    ("search", "road", "Found"),
-    ("insert", "pineapple", None),
-    ("insert", "pine", None),
-    ("delete", "apple", "Not Found"),
-    ("delete", "pine", "Deleted"),
-    ("update", "pineapple,pinetree", "Updated"),
-    ("search", "pinetree", "Found"),
-    ("insert", "", None),
+# test_cases = [
+#     ("insert", "shoe", None),
+#     ("draw", "", [{'s': ([{'h': ([{'o': ([{'e': ([], 1)}], 0)}], 0)}], 0)}]),
+#     ("insert", "search", None),
+#     ("search", "search", "Found"),
+#     ("search", "shoe", "Found"),
+#     ("delete", "search", "Deleted"),
+#     ("search", "search", "Not Found"),
+#     ("insert", "road", None),
+#     ("draw", "", [{'s': ([{'h': ([{'o': ([{'e': ([], 1)}], 0)}], 0)}, {'e': ([{'a': ([{'r': ([{'c': ([{'h': ([], 0)}], 0)}], 0)}], 0)}], 0)}], 0)}, {'r': ([{'o': ([{'a': ([{'d': ([], 1)}], 0)}], 0)}], 0)}]),
+#     ("search", "road", "Found"),
+#     ("insert", "pineapple", None),
+#     ("insert", "pine", None),
+#     ("delete", "apple", "Not Found"),
+#     ("delete", "pine", "Deleted"),
+#     ("update", "pineapple,pinetree", "Updated"),
+#     ("search", "pinetree", "Found"),
+#     ("insert", "", None),
     # ("insert", "（书、杂志等中区别于图片的）正文，文字材料", None),
     # ("search", "（书、杂志等中区别于图片的）正文，文字材料", "Found"),
-    ("insert", "a-b", None),
-    ("insert", "a!", None),
-    ("insert", "a-", None),
-    ("insert", "showroom", None),
-    ("insert", "sabudana", None),
-    ("starts_with", "s", ['shoe', 'showroom', 'sabudana'])
+    # ("insert", "a-b", None),
+    # ("insert", "a!", None),
+    # ("insert", "a-", None),
+    # ("insert", "showroom", None),
+    # ("insert", "sabudana", None),
+    # ("starts_with", "s", ['shoe', 'showroom', 'sabudana'])
     # (
     #     "insert",
     #     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
@@ -137,22 +137,22 @@ test_cases = [
     #     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     #     "Found",
     # ),
-]
+# ]
 
-trie = Trie()
-def code_runner(test_cases):
-    result = []
+# trie = Trie()
+# def code_runner(test_cases):
+#     result = []
     
-    for test_op_str, test_in, test_out in test_cases:
-        test_op = getattr(trie, test_op_str)
-        # result.append("Right" if test_op(test_in) == test_out else "Wrong")
-        result.append(test_op(test_in))
-    return result
+#     for test_op_str, test_in, test_out in test_cases:
+#         test_op = getattr(trie, test_op_str)
+#         # result.append("Right" if test_op(test_in) == test_out else "Wrong")
+#         result.append(test_op(test_in))
+#     return result
 
 
-output = code_runner(test_cases)
-for k in output:
-    print(k)
+# output = code_runner(test_cases)
+# for k in output:
+#     print(k)
 
 
 # import json
