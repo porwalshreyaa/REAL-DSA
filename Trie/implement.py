@@ -90,56 +90,47 @@ class Trie:
         old_word, new_word = test_input
         old_word = str(old_word)
         new_word = str(new_word)
-        found_and_removed =self.delete(old_word)
+        found_and_removed = self.delete(old_word)
         if found_and_removed == "Deleted":
             self.insert(new_word)
             return "Updated"
         return "Not Found"
 
 
-# test_cases = [
-#     ("insert", "shoe", None),
-#     ("draw", "", [{'s': ([{'h': ([{'o': ([{'e': ([], 1)}], 0)}], 0)}], 0)}]),
-#     ("insert", "search", None),
-#     ("search", "search", "Found"),
-#     ("search", "shoe", "Found"),
-#     ("delete", "search", "Deleted"),
-#     ("search", "search", "Not Found"),
-#     ("insert", "road", None),
-#     ("draw", "", [{'s': ([{'h': ([{'o': ([{'e': ([], 1)}], 0)}], 0)}, {'e': ([{'a': ([{'r': ([{'c': ([{'h': ([], 0)}], 0)}], 0)}], 0)}], 0)}], 0)}, {'r': ([{'o': ([{'a': ([{'d': ([], 1)}], 0)}], 0)}], 0)}]),
-#     ("search", "road", "Found"),
-#     ("insert", "pineapple", None),
-#     ("insert", "pine", None),
-#     ("delete", "apple", "Not Found"),
-#     ("delete", "pine", "Deleted"),
-#     ("update", "pineapple,pinetree", "Updated"),
-#     ("search", "pinetree", "Found"),
-#     ("insert", "", None),
-#     ("insert", "（书、杂志等中区别于图片的）正文，文字材料", None),
-#     ("search", "（书、杂志等中区别于图片的）正文，文字材料", "Found"),
-#     ("insert", "a-b", None),
-#     ("insert", "a!", None),
-#     ("insert", "a-", None),
-#     ("insert", "showroom", None),
-#     ("insert", "sabudana", None),
-#     ("starts_with", "s", ['shoe', 'showroom', 'sabudana'])
-#     (
-#         "insert",
-#         "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-#         None,
-#     ),
-#     ("search", "（书、杂志等中区别于图片的）正文，文字材料", "Found"),
-#     ("search", "a-b", "Found"),
-#     ("search", "a!", "Found"),
-#     ("search", "a-", "Found"),
-#     (
-#         "search",
-#         "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-#         "Found",
-#     ),
-# ]
-
-test_cases = [
+test_cases_1 = [
+    ("insert", "shoe", None),
+    ("draw", "", [{"s": ([{"h": ([{"o": ([{"e": ([], 1)}], 0)}], 0)}], 0)}]),
+    ("insert", "search", None),
+    ("search", "search", "Found"),
+    ("search", "shoe", "Found"),
+    ("delete", "search", "Deleted"),
+    ("search", "search", "Not Found"),
+    ("insert", "road", None),
+    ("draw", "",[{"s": ([{"h": ([{"o": ([{"e": ([], 1)}], 0)}], 0)},{"e": ([{"a": ([{"r": ([{"c": ([{"h": ([], 0)}], 0)}], 0,)}], 0,)}], 0,)},],0,)},{"r": ([{"o": ([{"a": ([{"d": ([], 1)}], 0)}], 0)}], 0)},],),
+    ("search", "road", "Found"),
+    ("insert", "pineapple", None),
+    ("insert", "pine", None),
+    ("delete", "apple", "Not Found"),
+    ("delete", "pine", "Deleted"),
+    ("update", ("pineapple", "pinetree"), "Updated"),
+    ("search", "pinetree", "Found"),
+    ("insert", "", None),
+    ("insert", "（书、杂志等中区别于图片的）正文，文字材料", None),
+    ("search", "（书、杂志等中区别于图片的）正文，文字材料", "Found"),
+    ("insert", "a-b", None),
+    ("insert", "a!", None),
+    ("insert", "a-", None),
+    ("insert", "showroom", None),
+    ("insert", "sabudana", None),
+    ("starts_with", "s", ["shoe", "showroom", "sabudana"]),
+    ("insert", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", None),
+    ("search", "（书、杂志等中区别于图片的）正文，文字材料", "Found"),
+    ("search", "a-b", "Found"),
+    ("search", "a!", "Found"),
+    ("search", "a-", "Found"),
+    ("search", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "Found", )
+]
+test_cases_2 =[
     ("insert", "shop", None),
     ("insert", "shopping", None),
     ("insert", "show", None),
@@ -163,7 +154,7 @@ test_cases = [
     ("search", "stoper", "Not Found"),
     ("search", 41204, "Not Found"),
     ("search", 412202, "Found"),
-    ("starts_with", "sho", ["shop", "shopping", "show", "showstoper"]),
+    ("starts_with", "sho", ["shop", "shopping", "show", "showstoper"]), ###
     ("starts_with", "ai", ["air", "airbone"]),
     ("starts_with", "ha", ["hash"]),
     ("starts_with", 412, ["4122", "412202"]),
@@ -174,7 +165,7 @@ test_cases = [
     ("search", "（书、杂志等中区别于图片的）正文，文字材料", "Not Found"),
     ("update", ("hash", "namra"), "Updated"),
     ("search", "namra", "Found"),
-    ("search", "hash", "Found"),  # this is breaking, why?
+    ("search", "hash", "Found"), 
     ("delete", 412202, "Deleted"),
     ("search", 412202, "Not Found"),
     ("delete", "showstoper", "Deleted"),
@@ -211,4 +202,4 @@ def code_runner(test_cases):
     return
 
 
-code_runner(test_cases)
+code_runner(test_cases_2)
