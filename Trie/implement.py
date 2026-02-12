@@ -23,7 +23,7 @@ class Trie:
         return trie_list
 
     def insert(self, word):
-        word = str(word)
+        word = str(word).lower()
         l = len(word)
         current = self.root
         for i in range(l):
@@ -34,7 +34,7 @@ class Trie:
         return None
 
     def search(self, word):
-        word = str(word)
+        word = str(word).lower()
         l = len(word)
         current = self.root
         for i in range(l):
@@ -67,7 +67,7 @@ class Trie:
         return words
 
     def delete(self, word):
-        word = str(word)
+        word = str(word).lower()
         l = len(word)
         current = self.root
         node_stack = []
@@ -88,8 +88,8 @@ class Trie:
 
     def update(self, test_input):
         old_word, new_word = test_input
-        old_word = str(old_word)
-        new_word = str(new_word)
+        old_word = str(old_word).lower()
+        new_word = str(new_word).lower()
         found_and_removed = self.delete(old_word)
         if found_and_removed == "Deleted":
             self.insert(new_word)
