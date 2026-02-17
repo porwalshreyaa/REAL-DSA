@@ -1,0 +1,22 @@
+- [x] Learn to represent Graphs
+- [x] Discusses approaches of graphs with pod members
+- [x] Implement Graphs
+- [x] Review graph implementation with pod members
+- [x] Problem - Find Year (Binary search through huge files)
+- [x] Implement Heap: Insert and Delete
+- [x] Implement Heapify: O(N)
+- [x] Review code for Heap with pod members
+- [x] Implement Binary Representation of given number
+- [x] Review Binary number implementation with pod
+- [x] Review and Discus Dijkstra's implementation
+- [x] Implememnt Tries
+- [x] Learn Tries
+- [x] Discuss and Review Tries with pod
+- [x] Code a BST
+- [x] Word Matcher
+- [x] Code preorder, postorder, inorder traversal of Tree
+- [x] Calculate f(x) recursively
+- [ ] Singly Linked List
+- [ ] Doubly Linked List
+- [ ] 
+- [ ] 
