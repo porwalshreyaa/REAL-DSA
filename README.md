@@ -18,5 +18,5 @@
 - [x] Calculate f(x) recursively
 - [ ] Singly Linked List
 - [ ] Doubly Linked List
-- [ ] 
-- [ ] 
+- [ ] ...
+- [ ] AVL Trees
